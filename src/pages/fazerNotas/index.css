@@ -1,0 +1,39 @@
+.fazerNotas-geral{
+    background-color: rgb(192, 221, 255);
+    padding: 0;
+    margin: -1px 0 0 0;
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fazerNotas-geral header{
+    padding: 10px 0 40px 0;
+}
+
+.fazerNotas-geral main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid black;
+    border-radius: 5px 40px;
+    box-shadow: 10px 10px 2px black;
+
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+    max-width: 1200px;
+}
+
+.fazerNotas-geral main button{
+    padding: 10px 0;
+    width: 200px;
+    margin: 20px auto 0 auto;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+}

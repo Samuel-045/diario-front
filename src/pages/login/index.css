@@ -1,0 +1,48 @@
+.login-geral {
+    background-color: rgb(192, 221, 255);
+    height: 100vh;
+    /*pega o tamanho da tela*/
+    width: 100vw;
+    /*pega a largura da tela*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-geral .conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    box-sizing: border-box;
+    width: 60%;
+    min-width: 200px;
+    padding: 15px 20px;
+
+    border-radius: 5px 35px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 2px black;
+}
+
+.login-geral .conteudo header {
+    display: flex;
+    justify-content: center;
+}
+
+.login-geral .conteudo .campos {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+}
+
+.login-geral .conteudo button {
+    padding: 10px 0;
+    width: 200px;
+    margin: 50px auto;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+}

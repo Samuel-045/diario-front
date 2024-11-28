@@ -1,0 +1,16 @@
+.geral-camposLabels{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+    input{
+        padding: 5px 4px;
+        border:solid 0.5px;
+        border-radius: 4px;
+    }
+
+    input[id='conteudoNota']{
+        display: flex;        
+        align-items: flex-start;
+    }
+}

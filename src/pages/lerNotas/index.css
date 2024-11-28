@@ -1,0 +1,30 @@
+.lerNotas-geral{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;    
+    max-width: 100%;
+    background-color: rgb(192, 221, 255);
+}
+
+.lerNotas-geral header{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 40px 0;
+
+    align-items: center;
+}
+
+.lerNotas-geral .icone-voltar{
+    position: fixed;
+    right: 10px;
+    width: 60px;
+    height: 50px;
+}
+
+.lerNotas-geral main{
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+}

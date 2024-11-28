@@ -1,0 +1,49 @@
+.cards-geral {
+    background: rgb(32, 17, 65);
+    background: linear-gradient(52deg, rgba(32, 17, 65, 1) 14%, rgba(90, 9, 121, 1) 81%, rgba(202, 206, 255, 1) 99%);
+    color: white;
+
+    width: 350px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+
+    .conteudo{
+        height: 100px;
+    }
+
+    .criar {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+        transition: 0.2s;
+        letter-spacing: 4px;
+    }
+
+    .criar:hover {
+        cursor: cell;
+    }
+
+    .opcoes{
+        display: flex;
+        justify-content: space-between;
+
+        border-radius: 4px;
+        background: rgb(240,240,240, 0.2);
+        
+
+        button {
+            padding: 10px 0;
+            width: 150px;
+    
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+    }
+    
+}
