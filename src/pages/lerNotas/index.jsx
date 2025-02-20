@@ -37,13 +37,12 @@ export default function LerNotas(){
     return(
         <div className="lerNotas-geral">
             <header> 
+                <button className='botaoSair' onClick={voltarLogin}></button>
                 <h1>Notas</h1>
-                <AiOutlineRollback className='icone-voltar' title='Logoff' onClick={voltarLogin}/>
+                <button className='botaoCriar' onClick={mudarPaginaCriar}></button>
             </header>
 
             <main>
-                <Cards titulo={"CRIAR"} cliqueCriar={mudarPaginaCriar}></Cards>
-
                 {lista.map( item =>
                     <Cards key={item.id} titulo={item.titulo} data={new Date(item.dt_inclusao).toLocaleDateString()} cliqueLer={() => mudarPaginaLer(item.id_relatos)} cliqueEdt={() => mudarPaginaEditar(item.id_relatos)}
                     cliqueExc={() => excluirNota(item.id_relatos)}></Cards>

@@ -7,22 +7,19 @@ export default function cards({ titulo, data, cliqueLer, cliqueEdt, cliqueExc, c
 
   return (
     <div className="cards-geral">
-      {verificador1 ? 
-      <div className="conteudo criar" onClick={cliqueCriar}>
-        <h3>{titulo}</h3>
-      </div> :
-        <div className="conteudo ler" onClick={cliqueLer}>
-          <h3>{titulo}</h3>
-          <h6>{data}</h6>
-        </div>
-      }
 
-      {verificador1 ? null :
-        <div className='opcoes'>
-          <button onClick={cliqueExc}>Excluir</button>
-          <button onClick={cliqueEdt}>Alterar</button>
-        </div>
-      }
+      <div className="conteudo ler" onClick={cliqueLer}>
+        <h3>{titulo}</h3>
+        <h6>{data}</h6>
+      </div>
+
+
+
+      <div className='opcoes'>
+        <button onClick={cliqueExc}>Excluir</button>
+        <button onClick={cliqueEdt}>Alterar</button>
+      </div>
+
 
     </div>
   )

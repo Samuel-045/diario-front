@@ -1,3 +1,15 @@
+:root {
+    --azulClaro: rgb(168, 218, 220);
+    --azulEscuro: rgb(69, 123, 157);
+    --brancoGelo: rgb(241, 250, 238);
+    --dourado: rgb(233, 196, 106);
+}
+
+@font-face {
+    font-family: caveat;
+    src: url("C:\Users\samue\OneDrive\Desktop\adoDIARIO\diario-front\src\assets\fonts\Caveat\static\Caveat-Regular.ttf");
+}
+
 .lerNotas-geral{
     min-height: 100vh;
     height: auto;
@@ -8,10 +20,37 @@
 
 .lerNotas-geral header{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 10px 0 40px 0;
 
     align-items: center;
+
+    border: 1px solid green;
+}
+
+.lerNotas-geral header h1{
+    font-family: caveat;
+    font-size: 40px;
+}
+
+.lerNotas-geral header .botaoSair{
+    width: 70px;
+    height: 36px;
+    border-radius: 10px;
+    border-left: solid 1px transparent;
+    border-top: solid 1px transparent;
+    box-shadow: 2px 2px 0.5px black;
+    background: url(../../assets/images/botaoSAIR.png) no-repeat;
+}
+
+.lerNotas-geral header .botaoCriar{
+    width: 70px;
+    height: 36px;
+    border-radius: 10px;
+    border-left: solid 1px transparent;
+    border-top: solid 1px transparent;
+    box-shadow: 2px 2px 0.5px black;
+    background: url(../../assets/images/BUTAOcriar.png) no-repeat;
 }
 
 .lerNotas-geral .icone-voltar{
@@ -27,4 +66,6 @@
     flex-wrap: wrap;
     gap:20px;
     justify-content: center;
+
+    border: 1px solid purple;
 }
