@@ -1,8 +1,22 @@
+:root {
+    --azulClaro: rgb(168, 218, 220);
+    --azulEscuro: rgb(69, 123, 157);
+    --brancoGelo: rgb(241, 250, 238);
+    --dourado: rgb(233, 196, 106);
+}
+
+@font-face {
+    font-family: caveat;
+    src: url("C:\Users\samue\OneDrive\Desktop\adoDIARIO\diario-front\src\assets\fonts\Caveat\static\Caveat-Regular.ttf");
+}
+
 .fazerNotas-geral{
-    background-color: rgb(192, 221, 255);
+    background-color: var(--azulClaro);
     padding: 0;
     margin: -1px 0 0 0;
     
+    width: 100vw;
+    overflow-x: hidden;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +24,32 @@
 }
 
 .fazerNotas-geral header{
+    width: 100vw;
     padding: 10px 0 40px 0;
+    border: 1px solid green;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fazerNotas-geral header p{
+    color: transparent;
+}
+
+.fazerNotas-geral header .botaoSair{
+    width: 70px;
+    height: 36px;
+    border-radius: 10px;
+    background: url(../../assets/images/botaoSAIR.png) no-repeat;
+    border-left: solid 1px transparent;
+    border-top: solid 1px transparent;
+    box-shadow: 2px 2px 0.5px black;
+}
+
+.fazerNotas-geral header h1{
+    font-family: caveat;
+    font-size: 40px;
 }
 
 .fazerNotas-geral main{
@@ -26,6 +65,7 @@
     width: 70%;
     min-width: 300px;
     max-width: 1200px;
+    background: var(--azulEscuro);
 }
 
 .fazerNotas-geral main button{

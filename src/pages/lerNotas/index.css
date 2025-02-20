@@ -15,7 +15,7 @@
     height: auto;
     width: 100vw;    
     max-width: 100%;
-    background-color: rgb(192, 221, 255);
+    background-color: var(--azulClaro)
 }
 
 .lerNotas-geral header{
