@@ -1,25 +1,19 @@
 import './index.scss'
 
-export default function cards({ titulo, data, cliqueLer, cliqueEdt, cliqueExc, cliqueCriar }) {
-  let verificador1 = false
-  if (titulo === "CRIAR")
-    verificador1 = true
+export default function cards({ titulo, data, cliqueLer, cliqueEdt, cliqueExc}) {
 
   return (
     <div className="cards-geral">
 
       <div className="conteudo ler" onClick={cliqueLer}>
         <h3>{titulo}</h3>
-        <h6>{data}</h6>
+        <h3>{data}</h3>
       </div>
-
-
 
       <div className='opcoes'>
-        <button onClick={cliqueExc}>Excluir</button>
-        <button onClick={cliqueEdt}>Alterar</button>
+        <button className='botaoDel' onClick={cliqueExc}></button>
+        <button  className='botaoAlt' onClick={cliqueEdt}></button>
       </div>
-
 
     </div>
   )
