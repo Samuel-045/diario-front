@@ -1,6 +1,6 @@
 import './index.css';
 import axios from "axios"
-import {useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 import Campo from '../../components/camposElabel';
@@ -13,8 +13,8 @@ export default function Login() {
 
   async function lerDadosLogin() {
     let body = {
-      "nome":userName,
-      "senha":userPassword
+      "nome": userName,
+      "senha": userPassword
     }
 
     let resp = await axios.post('http://localhost:3010/', body)
@@ -23,7 +23,7 @@ export default function Login() {
 
   async function verificarLogin() {
     await lerDadosLogin()
-    if(userName===dadosLogin.data[0].userName && userPassword===dadosLogin.data[0].senha){
+    if (dadosLogin.data != false) {
       navigate('/todasNotas')
     }
   }
@@ -31,16 +31,18 @@ export default function Login() {
 
   return (
     <div className="login-geral">
+      <header>
+        <h1>login</h1>
+      </header>
+
       <div className='conteudo'>
-        <header>
-          <h1>login</h1>
-        </header>
 
         <main className='campos'>
-          <Campo id={"CmNomeUsuario"} textoLabel={"Nome de usuário"} tipo={"text"} funcaoSet={setUserName} />
+          <Campo id={"CmNomeUsuario"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
           <Campo id={"CmSenha"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setPassword} />
-        </main>
 
+          <p><a href=''> CRIAR LOGIN</a>  |  <a href=''>ESQUECI MINHA SENHA</a></p>
+        </main>
 
         <button onClick={verificarLogin}> Logar </button>
 
