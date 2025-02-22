@@ -1,12 +1,12 @@
 import './index.css';
 import axios from "axios"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 import Campo from '../../components/camposElabel';
 
 export default function Login() {
-  let [dadosLogin, setDadosLogin] = useState({})
+  let [dadosLogin,setDadosLogin] = useState({})
   let [userName, setUserName] = useState("")
   let [userPassword, setPassword] = useState("")
   const navigate = useNavigate()
@@ -21,13 +21,11 @@ export default function Login() {
     setDadosLogin(resp)
   }
 
-  async function verificarLogin() {
-    await lerDadosLogin()
-    if (dadosLogin.data != false) {
+  useEffect(() => {
+    if (dadosLogin.data === true) {
       navigate('/todasNotas')
     }
-  }
-
+  },[dadosLogin])
 
   return (
     <div className="login-geral">
@@ -44,7 +42,7 @@ export default function Login() {
           <p><a href=''> CRIAR LOGIN</a>  |  <a href=''>ESQUECI MINHA SENHA</a></p>
         </main>
 
-        <button onClick={verificarLogin}> Logar </button>
+        <button onClick={lerDadosLogin}> Logar </button>
 
       </div>
     </div>
