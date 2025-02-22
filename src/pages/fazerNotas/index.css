@@ -26,7 +26,6 @@
 .fazerNotas-geral header{
     width: 100vw;
     padding: 10px 0 40px 0;
-    border: 1px solid green;
 
     display: flex;
     justify-content: space-evenly;
@@ -55,25 +54,29 @@
 .fazerNotas-geral main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    border: 1px solid black;
-    border-radius: 5px 40px;
-    box-shadow: 10px 10px 2px black;
+    align-items: center;
+    gap: 30px;
+    
+    border-radius: 10px;
 
     padding: 40px;
     width: 70%;
     min-width: 300px;
     max-width: 1200px;
+    height: 60vh;
+    max-height: 450px;
     background: var(--azulEscuro);
 }
 
 .fazerNotas-geral main button{
     padding: 10px 0;
     width: 200px;
-    margin: 20px auto 0 auto;
+    margin: 60px auto 0 auto;
 
-    border: none;
-    border-radius: 5px;
-    background-color: #ffffff;
+    border: transparent;
+    border-radius: 10px;
+    background-color: var(--dourado);
+
+    font-family: caveat;
+    font-size: 25px;
 }
