@@ -12,13 +12,19 @@ export default function Login() {
   const navigate = useNavigate()
 
   async function LerDadosLogin() {
-    let body = {
-      "nome": userName,
-      "senha": userPassword
+    try{
+      let body = {
+        "nome": userName,
+        "senha": userPassword
+      }
+  
+      let resp = await axios.post('http://localhost:3010/', body)
+      setDadosLogin(resp.data)
     }
-
-    let resp = await axios.post('http://localhost:3010/', body)
-    setDadosLogin(resp.data)
+    catch(erro){
+      alert(erro)
+    }
+    
   }
 
   useEffect(() => {

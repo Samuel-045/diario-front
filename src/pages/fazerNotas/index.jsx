@@ -16,39 +16,57 @@ export default function FazerNotas() {
     const { acao, id } = useParams();
 
     async function salvar() {
-        let idUsuario = localStorage.getItem("ID")
-        let body = {
-            "titulo": tituloNota,
-            "conteudo": conteudoNota,
-            "data": dataNota,
-            "id" : idUsuario
-        }
-        
-        let resp = await axios.post(`http://localhost:3010/notas/criar`, body);
+        try {
+            let idUsuario = localStorage.getItem("ID")
+            let body = {
+                "titulo": tituloNota,
+                "conteudo": conteudoNota,
+                "data": dataNota,
+                "id": idUsuario
+            }
 
-        voltarTodasNotas()
+            let resp = await axios.post(`http://localhost:3010/notas/criar`, body);
+
+            voltarTodasNotas()
+        }
+        catch (erro) {
+            alert(erro)
+        }
+
     }
 
     async function buscarPorId(id) {
-        let resp = await axios.get(`http://127.0.0.1:3010/notas/ler/${id}`)
+        try {
+            let resp = await axios.get(`http://127.0.0.1:3010/notas/ler/${id}`)
 
-        setTituloNota(resp.data[0].titulo)
-        setConteudoNota(resp.data[0].conteudo)
-        let dataFormatada = resp.data[0].dt_inclusao.split('T')[0];
-        setDataNota(dataFormatada)
+            setTituloNota(resp.data[0].titulo)
+            setConteudoNota(resp.data[0].conteudo)
+            let dataFormatada = resp.data[0].dt_inclusao.split('T')[0];
+            setDataNota(dataFormatada)
+        }
+        catch(erro){
+            alert(erro)
+        }
+        
 
     }
 
     async function atualizar() {
-        let body = {
-            "titulo": tituloNota,
-            "conteudo": conteudoNota,
-            "data": dataNota
+        try {
+            let body = {
+                "titulo": tituloNota,
+                "conteudo": conteudoNota,
+                "data": dataNota
+            }
+
+            let resp = await axios.post(`http://localhost:3010/atualizar/${id}`, body);
+
+            voltarTodasNotas()
+        }
+        catch (erro) {
+            alert(erro)
         }
 
-        let resp = await axios.post(`http://localhost:3010/atualizar/${id}`, body);
-
-        voltarTodasNotas()
     }
 
     let [camposHabilitados, setCamposHabilitados] = useState(false)
