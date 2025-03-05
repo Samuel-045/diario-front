@@ -11,18 +11,19 @@ export default function Login() {
   let [userPassword, setPassword] = useState("")
   const navigate = useNavigate()
 
-  async function lerDadosLogin() {
+  async function LerDadosLogin() {
     let body = {
       "nome": userName,
       "senha": userPassword
     }
 
     let resp = await axios.post('http://localhost:3010/', body)
-    setDadosLogin(resp)
+    setDadosLogin(resp.data)
   }
 
   useEffect(() => {
-    if (dadosLogin.data === true) {
+    if (dadosLogin.condicao === true) {
+      localStorage.setItem("ID",dadosLogin.id)
       navigate('/todasNotas')
     }
   },[dadosLogin])
@@ -42,7 +43,7 @@ export default function Login() {
           <p><a href=''> CRIAR LOGIN</a>  |  <a href=''>ESQUECI MINHA SENHA</a></p>
         </main>
 
-        <button onClick={lerDadosLogin}> Logar </button>
+        <button onClick={LerDadosLogin}> Logar </button>
 
       </div>
     </div>

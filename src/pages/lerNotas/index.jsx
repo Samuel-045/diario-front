@@ -11,7 +11,10 @@ export default function LerNotas(){
     let[lista,setLista]=useState([])
     const navigate = useNavigate()
 
-    const voltarLogin = () => { navigate('/') }
+    const voltarLogin = () => { 
+        navigate('/') 
+        localStorage.removeItem("ID")
+    }
     const mudarPaginaCriar = () => { navigate('/nota/criar')  }
     const mudarPaginaLer = (id) => { navigate(`/nota/ler/${id}`) }
     const mudarPaginaEditar = (id) => { 
@@ -26,7 +29,8 @@ export default function LerNotas(){
     }
 
     async function lerDadosNotas(){
-        let resp = await axios.get("http://localhost:3010/notas")
+        let idUsuario = localStorage.getItem("ID")
+        let resp = await axios.get(`http://localhost:3010/notas/${idUsuario}`)
         setLista(resp.data)
     }
 

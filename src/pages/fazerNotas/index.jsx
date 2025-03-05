@@ -16,19 +16,21 @@ export default function FazerNotas() {
     const { acao, id } = useParams();
 
     async function salvar() {
+        let idUsuario = localStorage.getItem("ID")
         let body = {
             "titulo": tituloNota,
             "conteudo": conteudoNota,
-            "data": dataNota
+            "data": dataNota,
+            "id" : idUsuario
         }
-
-        let resp = await axios.post('http://localhost:3010/notas/criar', body);
+        
+        let resp = await axios.post(`http://localhost:3010/notas/criar`, body);
 
         voltarTodasNotas()
     }
 
     async function buscarPorId(id) {
-        let resp = await axios.get(`http://127.0.0.1:3010/notas/${id}`)
+        let resp = await axios.get(`http://127.0.0.1:3010/notas/ler/${id}`)
 
         setTituloNota(resp.data[0].titulo)
         setConteudoNota(resp.data[0].conteudo)
