@@ -32,7 +32,7 @@ export default function Login() {
       localStorage.setItem("ID",dadosLogin.id)
       navigate('/todasNotas')
     }
-  },[dadosLogin])
+  },[dadosLogin, navigate])
 
   return (
     <div className="login-geral">

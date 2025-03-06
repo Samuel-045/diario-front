@@ -46,8 +46,7 @@ export default function FazerNotas() {
         }
         catch(erro){
             alert(erro)
-        }
-        
+        }      
 
     }
 
