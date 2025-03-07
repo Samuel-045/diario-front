@@ -11,6 +11,8 @@ export default function Login() {
   let [userPassword, setPassword] = useState("")
   const navigate = useNavigate()
 
+  const mudarPaginaCadastro = () => { navigate("/cadastro") }
+
   async function LerDadosLogin() {
     try{
       let body = {
