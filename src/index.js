@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import './index.css';
 
-import Home from './pages/login-cadastro';
+import Home from './pages/login';
 import Ler from './pages/lerNotas';
 import CLE from './pages/fazerNotas';
 import Cadastro from './pages/cadastro';

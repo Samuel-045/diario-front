@@ -48,7 +48,7 @@ export default function Login() {
           <Campo id={"CmNomeUsuario"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
           <Campo id={"CmSenha"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setPassword} />
 
-          <p><a href=''> CRIAR LOGIN</a>  |  <a href=''>ESQUECI MINHA SENHA</a></p>
+          <p><a href='/cadastro'> CRIAR LOGIN</a>  |  <a href=''>ESQUECI MINHA SENHA</a></p>
         </main>
 
         <button onClick={LerDadosLogin}> Logar </button>

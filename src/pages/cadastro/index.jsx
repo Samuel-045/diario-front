@@ -10,6 +10,7 @@ export default function Cadastro() {
     let [userName, setUserName] = useState("")
     let [userPassword, setUserPassword] = useState("")
     let [userPassword_confirm, setUserPassword_confirm] = useState("")
+    const navigate = useNavigate()
 
     const mudarPaginaLogin = () => { navigate('/') }
 
@@ -20,16 +21,23 @@ export default function Cadastro() {
                 <h1> Cadastro </h1>
             </header>
 
-            <main className="campos">
+            <div className="conteudo">
 
-                <Campo id={"CmUserEmail"} textoLabel={"Email"} tipo={"email"} funcaoSet={setUserEmail}/>
-                <Campo id={"CmUserName"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserEmail}/>
-                <Campo id={"CmUserPassword"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setUserPassword}/>
-                <Campo id={"CmUserPasswordConfir"} textoLabel={"Confirmação da Senha"} tipo={"password"} funcaoSet={setUserPassword_confirm}/>
+                <main className="campos">
 
+                    <Campo id={"CmUserEmail"} textoLabel={"Email"} tipo={"email"} funcaoSet={setUserEmail} />
+                    <Campo id={"CmUserName"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserEmail} />
+                    <Campo id={"CmUserPassword"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setUserPassword} />
+                    <Campo id={"CmUserPasswordConfir"} textoLabel={"Confirmação da Senha"} tipo={"password"} funcaoSet={setUserPassword_confirm} />
 
-            </main>
+                    <p>Já tem conta? <a href="/">REALIZAR LOGIN</a></p>
+                    
+                </main>
 
+                <button> Criar Login </button> 
+
+            </div>
+            
         </div>
     )
 }
