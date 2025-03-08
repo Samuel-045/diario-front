@@ -1,18 +1,59 @@
 import "./index.css"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import Campo from "../../components/camposElabel"
 
 export default function Cadastro() {
+    let [dadosLogin,setDadosLogin] = useState({})
     let [userEmail, setUserEmail] = useState("")
     let [userName, setUserName] = useState("")
     let [userPassword, setUserPassword] = useState("")
     let [userPassword_confirm, setUserPassword_confirm] = useState("")
+    
+    const rxNome = /^[A-Za-z0-9]+$/
+    let condNome
+    const rxEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/
+    let condEmail
+
     const navigate = useNavigate()
 
     const mudarPaginaLogin = () => { navigate('/') }
+
+    async function cadastro(){
+        try{
+            let body = {
+                "email":userEmail,
+                "nome":userName,
+                "senha":userPassword
+            }
+
+            console.log(body)
+            let resp = await axios.post('http://localhost:3010/cadastro', body)
+            setDadosLogin(resp.data)
+        }
+        catch(erro){
+            alert(erro)
+        }
+    }
+
+
+    useEffect(() => {
+        condEmail = rxEmail.test(userEmail)
+        condNome = rxNome.test(userName)
+
+        if(userPassword === userPassword_confirm && condEmail && condNome){
+            console.log(dadosLogin)
+            if (dadosLogin.condicao === true) {
+                localStorage.setItem("ID",dadosLogin.id)
+                navigate('/todasNotas')
+            }
+        }else{
+            alert("Dados não válidos")
+        }
+
+      },[dadosLogin, navigate])
 
     return (
         <div className="cadastro-geral">
@@ -26,7 +67,7 @@ export default function Cadastro() {
                 <main className="campos">
 
                     <Campo id={"CmUserEmail"} textoLabel={"Email"} tipo={"email"} funcaoSet={setUserEmail} />
-                    <Campo id={"CmUserName"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserEmail} />
+                    <Campo id={"CmUserName"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
                     <Campo id={"CmUserPassword"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setUserPassword} />
                     <Campo id={"CmUserPasswordConfir"} textoLabel={"Confirmação da Senha"} tipo={"password"} funcaoSet={setUserPassword_confirm} />
 
@@ -34,10 +75,10 @@ export default function Cadastro() {
                     
                 </main>
 
-                <button> Criar Login </button> 
+                <button onClick={cadastro}> Criar Login </button> 
 
             </div>
-            
+
         </div>
     )
 }
