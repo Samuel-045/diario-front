@@ -19,8 +19,6 @@ export default function Cadastro() {
 
     const navigate = useNavigate()
 
-    const mudarPaginaLogin = () => { navigate('/') }
-
     async function cadastro(){
         try{
             let body = {
@@ -29,7 +27,6 @@ export default function Cadastro() {
                 "senha":userPassword
             }
 
-            console.log(body)
             let resp = await axios.post('http://localhost:3010/cadastro', body)
             setDadosLogin(resp.data)
         }
@@ -37,7 +34,6 @@ export default function Cadastro() {
             alert(erro)
         }
     }
-
 
     useEffect(() => {
         condEmail = rxEmail.test(userEmail)
@@ -49,8 +45,6 @@ export default function Cadastro() {
                 localStorage.setItem("ID",dadosLogin.id)
                 navigate('/todasNotas')
             }
-        }else{
-            alert("Dados não válidos")
         }
 
       },[dadosLogin, navigate])

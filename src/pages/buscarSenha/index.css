@@ -1,0 +1,90 @@
+:root{
+    --azulClaro: rgb(168, 218, 220);
+    --azulEscuro: rgb(69, 123, 157);
+    --brancoGelo: rgb(241, 250, 238);
+    --dourado: rgb(233, 196, 106);
+}
+
+@font-face {
+    font-family: caveat;
+    src: url("C:\Users\samue\OneDrive\Desktop\adoDIARIO\diario-front\src\assets\fonts\Caveat\static\Caveat-Regular.ttf");
+}
+
+.buscarSenha-geral {
+    background-color: var(--azulClaro);
+    height: 100vh;
+    /*pega o tamanho da tela*/
+    width: 100vw;
+    /*pega a largura da tela*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buscarSenha-geral header h1 {
+    font-family: caveat;
+    font-size: 40px;
+}
+
+.buscarSenha-geral .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    box-sizing: border-box;
+    width: 60%;
+    min-width: 200px;
+    height: 480px;
+    padding: 15px 20px;
+    background-color: var(--azulEscuro);
+
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.buscarSenha-geral .conteudo a,
+.buscarSenha-geral .conteudo p {
+    display: flex;
+    gap:15px;
+    text-decoration: none;
+    color: white;
+}
+
+.buscarSenha-geral .campos{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+
+}
+
+.buscarSenha-geral .campos .campoEmail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.buscarSenha-geral .conteudo button {
+    padding: 10px 0;
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dourado);
+
+    font-family: caveat;
+    font-size: 25px;
+}

@@ -8,6 +8,7 @@ import Home from './pages/login';
 import Ler from './pages/lerNotas';
 import CLE from './pages/fazerNotas';
 import Cadastro from './pages/cadastro';
+import BuscarSenha from './pages/buscarSenha'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path='/nota/criar' Component={CLE}></Route>{/*Criar, Ler e Editar - CREATE, READ, UPDATE*/}
         <Route path='/nota/ler/:id' Component={CLE}></Route>
         <Route path='/nota/atualizar/:acao/:id' Component={CLE}></Route>
+        <Route path='/recuperarsenha' Component={BuscarSenha}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
