@@ -28,7 +28,7 @@ export default function LerNotas() {
             lerDadosNotas()
         }
         catch(erro){
-            alert(erro)
+            alert(erro.message)
         }
         
     }
@@ -40,7 +40,7 @@ export default function LerNotas() {
             setLista(resp.data)
         }
         catch (erro) {
-            alert(erro)
+            alert(erro.message)
         }
 
     }

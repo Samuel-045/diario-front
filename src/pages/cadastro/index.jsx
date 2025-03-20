@@ -27,11 +27,15 @@ export default function Cadastro() {
                 "senha":userPassword
             }
 
+            if(body.email==="" || body.nome==="" || body.senha===""){
+                throw new Error("Todos os campos devem ser preenchidos")
+            }
+
             let resp = await axios.post('http://localhost:3010/cadastro', body)
             setDadosLogin(resp.data)
         }
         catch(erro){
-            alert(erro)
+            alert(erro.message)
         }
     }
 

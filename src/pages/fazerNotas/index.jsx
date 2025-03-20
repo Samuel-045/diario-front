@@ -25,12 +25,22 @@ export default function FazerNotas() {
                 "id": idUsuario
             }
 
+            let rxData = /^[0-9]{5,}-[0-9]{2}-[0-9]{2}$/
+            let condData = rxData.test(body.data)
+
+            if(body.titulo==="" || body.conteudo==="" || body.data===""){
+                throw new Error("Todos os campos devem ser preenchidos")
+            }
+            else if(condData){
+                throw new Error("Digite uma data válida")
+            }
+
             let resp = await axios.post(`http://localhost:3010/notas/criar`, body);
 
             voltarTodasNotas()
         }
         catch (erro) {
-            alert(erro)
+            alert(erro.message)
         }
 
     }
@@ -45,7 +55,7 @@ export default function FazerNotas() {
             setDataNota(dataFormatada)
         }
         catch(erro){
-            alert(erro)
+            alert(erro.message)
         }      
 
     }
@@ -56,6 +66,16 @@ export default function FazerNotas() {
                 "titulo": tituloNota,
                 "conteudo": conteudoNota,
                 "data": dataNota
+            }
+
+            let rxData = /^[0-9]{5,}-[0-9]{2}-[0-9]{2}$/
+            let condData = rxData.test(body.data)
+
+            if(body.titulo==="" || body.conteudo==="" || body.data===""){
+                throw new Error("Todos os campos devem ser preenchidos")
+            }
+            else if(condData){
+                throw new Error("Digite uma data válida")
             }
 
             let resp = await axios.post(`http://localhost:3010/atualizar/${id}`, body);

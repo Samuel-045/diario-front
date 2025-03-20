@@ -19,12 +19,16 @@ export default function Login() {
         "nome": userName,
         "senha": userPassword
       }
+
+      if(body.nome==="" || body.senha==""){
+        throw new Error("Todos os campos devem ser preenchidos")
+      }
   
       let resp = await axios.post('http://localhost:3010/', body)
       setDadosLogin(resp.data)
     }
     catch(erro){
-      alert(erro)
+      alert(erro.message)
     }
     
   }
