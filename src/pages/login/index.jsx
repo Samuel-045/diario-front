@@ -2,46 +2,52 @@ import './index.css';
 import axios from "axios"
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast'
 
 import Campo from '../../components/camposElabel';
 
 export default function Login() {
-  let [dadosLogin,setDadosLogin] = useState({})
+  let [dadosLogin, setDadosLogin] = useState({})
   let [userName, setUserName] = useState("")
   let [userPassword, setPassword] = useState("")
   const navigate = useNavigate()
 
   const mudarPaginaCadastro = () => { navigate("/cadastro") }
 
+  function notificacaoErro(erro) {
+    toast.error(erro.message)
+  }
+
   async function LerDadosLogin() {
-    try{
+    try {
       let body = {
         "nome": userName,
         "senha": userPassword
       }
 
-      if(body.nome==="" || body.senha==""){
+      if (body.nome === "" || body.senha == "") {
         throw new Error("Todos os campos devem ser preenchidos")
       }
-  
+
       let resp = await axios.post('http://localhost:3010/', body)
       setDadosLogin(resp.data)
     }
-    catch(erro){
-      alert(erro.message)
+    catch (erro) {
+      notificacaoErro(erro)
     }
-    
+
   }
 
   useEffect(() => {
     if (dadosLogin.condicao === true) {
-      localStorage.setItem("ID",dadosLogin.id)
+      localStorage.setItem("ID", dadosLogin.id)
       navigate('/todasNotas')
     }
-  },[dadosLogin, navigate])
+  }, [dadosLogin, navigate])
 
   return (
     <div className="login-geral">
+    <Toaster></Toaster>
       <header>
         <h1>login</h1>
       </header>

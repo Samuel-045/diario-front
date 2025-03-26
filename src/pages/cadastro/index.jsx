@@ -2,6 +2,7 @@ import "./index.css"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import toast, { Toaster } from 'react-hot-toast'
 
 import Campo from "../../components/camposElabel"
 
@@ -19,6 +20,10 @@ export default function Cadastro() {
 
     const navigate = useNavigate()
 
+    function notificacaoErro(erro) {
+        toast.error(erro.message)
+      }
+
     async function cadastro(){
         try{
             let body = {
@@ -31,30 +36,32 @@ export default function Cadastro() {
                 throw new Error("Todos os campos devem ser preenchidos")
             }
 
+            condEmail = rxEmail.test(userEmail)
+            condNome = rxNome.test(userName)
+            if(userPassword !== userPassword_confirm || !condEmail || !condNome){
+                throw new Error("Digite dados válidos")
+            }
+
             let resp = await axios.post('http://localhost:3010/cadastro', body)
             setDadosLogin(resp.data)
         }
         catch(erro){
-            alert(erro.message)
+            notificacaoErro(erro)
         }
     }
 
     useEffect(() => {
-        condEmail = rxEmail.test(userEmail)
-        condNome = rxNome.test(userName)
-
         if(userPassword === userPassword_confirm && condEmail && condNome){
-            console.log(dadosLogin)
             if (dadosLogin.condicao === true) {
                 localStorage.setItem("ID",dadosLogin.id)
                 navigate('/todasNotas')
             }
         }
-
       },[dadosLogin, navigate])
 
     return (
         <div className="cadastro-geral">
+            <Toaster></Toaster>
 
             <header>
                 <h1> Cadastro </h1>

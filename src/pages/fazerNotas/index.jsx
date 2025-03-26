@@ -4,6 +4,8 @@ import axios from "axios"
 import Campo from '../../components/camposElabel'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast'
+
 
 export default function FazerNotas() {
     let [tituloNota, setTituloNota] = useState("")
@@ -14,6 +16,10 @@ export default function FazerNotas() {
     const voltarTodasNotas = () => { navigate('/todasNotas') }
 
     const { acao, id } = useParams();
+
+    function notificacao(erro){
+        toast.error(erro.message)
+    }
 
     async function salvar() {
         try {
@@ -40,7 +46,7 @@ export default function FazerNotas() {
             voltarTodasNotas()
         }
         catch (erro) {
-            alert(erro.message)
+            notificacao(erro)
         }
 
     }
@@ -55,7 +61,7 @@ export default function FazerNotas() {
             setDataNota(dataFormatada)
         }
         catch(erro){
-            alert(erro.message)
+            notificacao(erro)
         }      
 
     }
@@ -83,7 +89,7 @@ export default function FazerNotas() {
             voltarTodasNotas()
         }
         catch (erro) {
-            alert(erro)
+            notificacao(erro)
         }
 
     }
@@ -102,6 +108,7 @@ export default function FazerNotas() {
 
     return (
         <div className='fazerNotas-geral'>
+        <Toaster></Toaster>
             <header>
                 <button className='botaoSair' onClick={voltarTodasNotas}></button>
 
