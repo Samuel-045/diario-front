@@ -31,6 +31,10 @@ export default function Login() {
 
       let resp = await axios.post('http://localhost:3010/', body)
       setDadosLogin(resp.data)
+
+      if (dadosLogin == false) {
+        throw new Error("Cadastro não encontrado")
+      }
     }
     catch (erro) {
       notificacaoErro(erro)
