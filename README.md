@@ -3,8 +3,11 @@
     <img src="https://img.shields.io/badge/STATUS-EM_ANDAMENTO-purple">
 </p>
 
+
+
 # 📝 Descrição 
-O software Diario permite que usuários registrados mantenham um diário pessoal online. Os usuários podem interagir com suas notas, realizando todas as operações básicas de gerenciamento.
+O software Diario permite que usuários registrados mantenham um diário pessoal online. Os usuários podem interagir com suas notas, realizando todas as operações básicas de gerenciamento.<br>
+<p>Este repositório contém o código-fonte do frontend!</p>
 
 ## ✔️ Funcionalidades
 
