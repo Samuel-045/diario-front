@@ -34,6 +34,14 @@ export default function FazerNotas() {
             let rxData = /^[0-9]{5,}-[0-9]{2}-[0-9]{2}$/
             let condData = rxData.test(body.data)
 
+            var dataFormatoMaquina = Date.now() // data em milisegundos
+            var dataAtual = new Date(dataFormatoMaquina) // gera uma data com base nos milisegundos
+            var dataAtualFormatada = dataAtual.toLocaleDateString() // converte a dataAtual para o padrão de data utilizado no Brasil
+            
+            if(dataNota > dataAtualFormatada){
+                condData=true
+            }
+
             if(body.titulo==="" || body.conteudo==="" || body.data===""){
                 throw new Error("Todos os campos devem ser preenchidos")
             }
