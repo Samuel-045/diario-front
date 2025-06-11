@@ -74,10 +74,10 @@ export default function Cadastro() {
 
                 <main className="campos">
 
-                    <Campo id={"CmUserEmail"} textoLabel={"Email"} tipo={"email"} funcaoSet={setUserEmail} />
-                    <Campo id={"CmUserName"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
-                    <Campo id={"CmUserPassword"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setUserPassword} />
-                    <Campo id={"CmUserPasswordConfir"} textoLabel={"Confirmação da Senha"} tipo={"password"} funcaoSet={setUserPassword_confirm} />
+                    <Campo id={"CmUserEmail"} textoCampo={"Digite seu email"} textoLabel={"Email"} tipo={"email"} funcaoSet={setUserEmail} />
+                    <Campo id={"CmUserName"} textoCampo={"Digite o nome que deseja colocar na sua conta"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
+                    <Campo id={"CmUserPassword"} textoCampo={"Digite a senha"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setUserPassword} />
+                    <Campo id={"CmUserPasswordConfir"} textoCampo={"Confirme a senha"} textoLabel={"Confirmação da Senha"} tipo={"password"} funcaoSet={setUserPassword_confirm} />
 
                     <p>Já tem conta? <a href="/">REALIZAR LOGIN</a></p>
                     

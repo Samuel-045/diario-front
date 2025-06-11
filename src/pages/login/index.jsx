@@ -59,8 +59,8 @@ export default function Login() {
       <div className='conteudo'>
 
         <main className='campos'>
-          <Campo id={"CmNomeUsuario"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
-          <Campo id={"CmSenha"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setPassword} />
+          <Campo id={"CmNomeUsuario"} textoCampo={"Digite o nome do seu perfil"} textoLabel={"Usuário"} tipo={"text"} funcaoSet={setUserName} />
+          <Campo id={"CmSenha"} textoCampo={"Digite sua senha"} textoLabel={"Senha"} tipo={"password"} funcaoSet={setPassword} />
 
           <p><a href='/cadastro'> CRIAR LOGIN</a>  |  <a href='/recuperarsenha'>ESQUECI MINHA SENHA</a></p>
         </main>

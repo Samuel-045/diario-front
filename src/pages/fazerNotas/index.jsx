@@ -129,8 +129,8 @@ export default function FazerNotas() {
             </header>
 
             <main>
-                <Campo id={"tituloNota"} tipo={"text"} textoLabel={"Titulo da nota"} textoCampo={tituloNota} funcaoSet={setTituloNota} habilitados={camposHabilitados} />
-                <Campo id={"conteudoNota"} tipo={"textarea"} textoLabel={"Conteúdo da nota"} textoCampo={conteudoNota} funcaoSet={setConteudoNota} habilitados={camposHabilitados} />
+                <Campo id={"tituloNota"} textoCampo={"Digite o título da nota"} tipo={"text"} textoLabel={"Titulo da nota"} dadosCampo={tituloNota} funcaoSet={setTituloNota} habilitados={camposHabilitados} />
+                <Campo id={"conteudoNota"} textoCampo={"Digite o conteúdo da nota"} tipo={"textarea"} textoLabel={"Conteúdo da nota"} dadosCampo={conteudoNota} funcaoSet={setConteudoNota} habilitados={camposHabilitados} />
                 <Campo id={"dataNota"} tipo={"date"} textoLabel={"Data da nota"} textoCampo={dataNota} funcaoSet={setDataNota} habilitados={camposHabilitados} />
 
                 {id === undefined ?
