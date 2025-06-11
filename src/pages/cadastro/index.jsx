@@ -18,6 +18,8 @@ export default function Cadastro() {
     const rxEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/
     let condEmail
 
+    const telaNotas = () => { navigate('/todasNotas')}
+
     const navigate = useNavigate()
 
     function notificacaoErro(erro) {
@@ -41,9 +43,10 @@ export default function Cadastro() {
             if(userPassword !== userPassword_confirm || !condEmail || !condNome){
                 throw new Error("Digite dados válidos")
             }
-
+            
             let resp = await axios.post('http://localhost:3010/cadastro', body)
             setDadosLogin(resp.data)
+            telaNotas()
         }
         catch(erro){
             notificacaoErro(erro)
