@@ -21,6 +21,13 @@ export default function FazerNotas() {
         toast.error(erro.message)
     }
 
+    function tratarData(data){ //função destinada a tratar a data inserida a fim de comparar com a data atual
+        var dataSeparada = data.split("-") // sepera a data inserida
+        var dataOrganizada = new Date(dataSeparada[0], dataSeparada[1]-1, dataSeparada[2]) // gera uma data com base na data separada
+        var dataTraduzida = dataOrganizada.toLocaleDateString() // converte a dataOrganizada para o padrão de data utilizado no Brasil
+        return dataTraduzida
+    }
+
     async function salvar() {
         try {
             let idUsuario = localStorage.getItem("ID")
@@ -38,7 +45,9 @@ export default function FazerNotas() {
             var dataAtual = new Date(dataFormatoMaquina) // gera uma data com base nos milisegundos
             var dataAtualFormatada = dataAtual.toLocaleDateString() // converte a dataAtual para o padrão de data utilizado no Brasil
             
-            if(dataNota > dataAtualFormatada){
+            var dataNotaOrganizada = tratarData(dataNota)
+
+            if(dataNotaOrganizada > dataAtualFormatada){
                 condData=true
             }
 
