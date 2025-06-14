@@ -10,7 +10,75 @@ O software Diario permite que usuários registrados mantenham um diário pessoal
 
 # ▶️ Software em ação
 
-Em breve adicionaremos imagens!
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/c294d538-9c9d-4907-bb9c-16de674361bf" alt="Tela de login"><br>
+    <div>
+
+>    Tela de login
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/1fc4ee2b-212f-44bb-b93d-815105ac79df" alt="Tela de cadastro de conta"><br>
+    <div>
+
+>    Tela de cadastro de conta
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/20584e8c-5e5a-48b9-a669-e3f88cd33dfb" alt="Tela destinada à recuperação da senha"><br>
+    <div>
+
+>    Tela destinada à recuperação da senha
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/5a62f6b7-956b-42a5-a069-970329ad7274" alt="Tela home"><br>
+    <div>
+
+>    Tela home; O usuário tem acesso a todas as notas já feitas
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/4e13b7f1-3c92-44ef-bc0d-3484976a61f3" alt="Tela de leitura da nota"><br>
+    <div>
+
+>    Tela de leitura da nota
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/eee44bdd-56f1-4610-a333-f407bf6827b2" alt="Tela de edição da nota"><br>
+    <div>
+
+>    Tela destinada à edição da nota selecionada
+
+   </div>
+   <br>
+</div>
+
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/b783f8a0-d58e-45df-b712-0395ef5ab0f4" alt="Tela de criação da nota"><br>
+    <div>
+
+>    Tela de criação da nota
+
+   </div>
+   <br>
+</div>
 
 ## ✔️ Funcionalidades
 
